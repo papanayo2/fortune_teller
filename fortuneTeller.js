@@ -6,12 +6,11 @@ let fortunes = {
 };
 
 const getFortune = potentialFortunes => {
-    let 
+    let keys = Object.keys( potentialFortunes );
+    let part1 = keys[Math.floor(Math.random() * keys.length)];
+    let values = potentialFortunes[part1];
+    let part2 = values[Math.floor(Math.random() * values.length)];
+    return part1 + ' ' + part2;
 };
 
-let userInput = window.prompt('Would you like to hear your fortune? (Y/N)');
-if( userInput === 'Y'){
-    console.log(getFortune(fortunes));
-} else {
-    console.log('Oh! Ok then. Bye!');
-}
+console.log( getFortune( fortunes )) ;
